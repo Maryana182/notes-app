@@ -5,7 +5,7 @@ const addUser = (name, lastname, age, major) => {
     const users = loadUsers()
     const duplicateUser = users.find((user) => user.name === name)
 
-    debugger
+
 
     if (!duplicateUser) {
         users.push({
