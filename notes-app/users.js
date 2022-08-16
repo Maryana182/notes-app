@@ -48,7 +48,7 @@ const findUserByMajor = (major) => {
     if (userMajorList) {
         console.log(chalk.inverse(users.name))
     } else {
-        console.log(chalk.red.inverse('No users have same majors!'))
+        
     }
 }
 
