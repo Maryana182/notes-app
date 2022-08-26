@@ -1,6 +1,5 @@
 const fs = require('fs')
 const chalk = require('chalk')
-const validator = require('validator')
 const { string } = require('yargs')
 
 const addUser = (Id, name, lastname, age, major) => {
