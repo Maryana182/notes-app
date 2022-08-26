@@ -1,52 +1,62 @@
 const fs = require('fs')
 const chalk = require('chalk')
+const validator = require('validator')
+const { string } = require('yargs')
 
-const addUser = (name, lastname, age, major) => {
+const addUser = (Id, name, lastname, age, major) => {
     const users = loadUsers()
-    const duplicateUser = users.find((user) => user.name === name)
-
-
+    
+    const duplicateUser = users.find((user) => user.Id === Id && user.name === name)
 
     if (!duplicateUser) {
-        users.push({
-            name: name,
-            lastname: lastname,
-            age: age,
-            major: major
-        })
-        saveUsers(users)
-        console.log(chalk.green.inverse('New user added!'))
+        if(string.length === [5,20]){
+            users.push({
+                Id: Id,
+                name: name,
+                lastname: lastname,
+                age: age,
+                major: major
+            })
+            saveUsers(users)
+            console.log(chalk.green.inverse('New user added!'))
+        }else console.log(chalk.red.inverse('Name must be at least 5 to 20 characters!'))
     }else {
         console.log(chalk.red.inverse('User already exists!'))
     }
+
 }
 
-const findUserById = () => {
+const findUserById = (Id) => {
     const users = loadUsers()
+    const findUserId = users.find((user) => user.Id === Id)
 
-    console.log(chalk.inverse('File Id'))
-
-    users.forEach((Id) => {
-        console.log(Id.name)
-    })
+    if (findUserId) {
+        console.log(findUserId)
+    } else {
+        console.log(chalk.red.inverse('User not found!'))
+    }
 }
 
 const findUserByName = (name) => {
     const users = loadUsers()
+    const findUserName = users.find((user) => user.name === name)
 
-        console.log(chalk.inverse(users.name))
+    if (findUserName) {
+        console.log(findUserName)
+    } else {
+        console.log(chalk.red.inverse('User name not found!'))
+    }
+}   
 
-        users.forEach((users) => {
-            console.log(users.name)
-        })
-}
 
 const findUserByMajor = (major) => {
     const users = loadUsers()
-    const userMajorList = users.find((user) => users.major === major)
+    const userMajorList = users.filter((user) => user.major === major)
 
     if (userMajorList) {
-        console.log(chalk.inverse(users.name))
+
+        console.log(chalk.inverse('The Users are:'))
+        console.log(userMajorList)
     } else {
         console.log(chalk.red.inverse('No users have same majors!'))
     }
@@ -59,7 +69,7 @@ const saveUsers = (users) => {
 
 const loadUsers = () => {
     try {
-        const dataBuffer = fs.readFileSync('users.js')
+        const dataBuffer = fs.readFileSync('users.json')
         const dataJSON = dataBuffer.toString()
         return JSON.parse(dataJSON)
     } catch (e) {

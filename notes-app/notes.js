@@ -60,7 +60,7 @@ const saveNotes = (notes) => {
 
 const loadNotes = () => {
     try {
-        const dataBuffer = fs.readFileSync('notes.js')
+        const dataBuffer = fs.readFileSync('notes.json')
         const dataJSON = dataBuffer.toString()
         return JSON.parse(dataJSON)
     } catch (e) {

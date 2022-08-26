@@ -5,10 +5,16 @@ const users = require('./users.js')
 
 yargs.version('1.0.0')
 
+    
 yargs.command({
     command: 'add',
     describe: 'Add a user',
     builder: {
+        Id: {
+            describe: 'Id',
+            demandOption: true,
+            type: 'string'
+        },
         name: {
             describe: 'name',
             demandOption: true,
@@ -30,21 +36,28 @@ yargs.command({
             type: 'string'
         }
     },
-    handler(argv) {
-       users.addUser(argv.name, argv.lastname, argv.age, argv.major)
-    }
+     handler(argv) {
+       users.addUser(argv.Id, argv.name, argv.lastname, argv.age, argv.major)
+     }
+    })
+
+    yargs.command({
+        command: 'read',
+        describe: 'Read a user name',
+        builder: {
+            Id: {
+                describe: 'Id',
+                demandOption: true,
+                type: 'string'
+            },
+        },
+        handler(argv) {
+           users.findUserById(argv.Id)
+        }
     })
 
 yargs.command({
-        command: 'list',
-        describe: 'List a file',
-        handler() {
-            users.findUserById()
-        }
-        })
-
-yargs.command({
-        command: 'read',
+        command: 'read1',
         describe: 'Read a user name',
         builder: {
             name: {
@@ -56,21 +69,21 @@ yargs.command({
         handler(argv) {
            users.findUserByName(argv.name)
         }
-        })
-    
+    })
+
 yargs.command({
-            command: 'List',
-            describe: 'List users',
-            builder: {
-                name: {
-                    describe: 'name',
-                    demandOption: true,
-                    type: 'string'
-                }
-            },
+        command: 'list',
+        describe: 'List users',
+        builder: {
+            major: {
+            describe: 'major',
+            demandOption: true,
+            type: 'string'
+        }
+        },
             handler(argv) {
-               users.findUserByMajor(argv.name)
-            }
-        })
+               users.findUserByMajor(argv.major)
+        }
+    })
 
 yargs.parse()
