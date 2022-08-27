@@ -1,1 +1,6 @@
-notes-app/node_modules
+node_modules
+notes.js
+app.js
+notes.json
+package-lock.json
+package.json
