@@ -1,24 +1,28 @@
 const fs = require('fs')
 const chalk = require('chalk')
 const { string } = require('yargs')
+const crypto = require('crypto')
 
-const addUser = (Id, name, lastname, age, major) => {
+const addUser = (Id, email, name, lastname, age, major) => {
     const users = loadUsers()
-    
-    const duplicateUser = users.find((user) => user.Id === Id && user.name === name)
+    const duplicateUser = users.find((user) => user.email === email)
 
     if (!duplicateUser) {
-        if(string.length === [5,20]) {
             users.push({
                 Id: Id,
+                email: email,
                 name: name,
                 lastname: lastname,
                 age: age,
-                major: major
+                major: major,
             })
-            saveUsers(users)
-            console.log(chalk.green.inverse('New user added!'))
-        } else console.log(chalk.red.inverse('Name must be at least 5 to 20 characters!'))
+
+                if ((name.length >= 5 && name.length <= 20) && (lastname.length >= 5 && lainitstname.length <= 20)) {
+                    console.log(crypto.randomUUID(users.Id))
+                    saveUsers(users)
+                    console.log(chalk.green.inverse('New user added!'))   
+            }else{console.log(chalk.red.inverse('Name must be at least 5 to 20 characters!'))
+        }
     }else {
         console.log(chalk.red.inverse('User already exists!'))
     }
