@@ -1,5 +1,6 @@
 const chalk = require('chalk')
 const yargs = require('yargs')
+const crypto = require('crypto')
 const users = require('./users.js')
 
 
@@ -12,6 +13,11 @@ yargs.command({
     builder: {
         Id: {
             describe: 'Id',
+            demandOption: true,
+            type: 'integer'
+        },
+        email: {
+            describe: 'email',
             demandOption: true,
             type: 'string'
         },
@@ -37,7 +43,7 @@ yargs.command({
         }
     },
      handler(argv) {
-       users.addUser(argv.Id, argv.name, argv.lastname, argv.age, argv.major)
+       users.addUser(argv.Id, argv.email, argv.name, argv.lastname, argv.age, argv.major)
      }
     })
 
