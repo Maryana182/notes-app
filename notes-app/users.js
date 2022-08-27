@@ -8,7 +8,7 @@ const addUser = (Id, name, lastname, age, major) => {
     const duplicateUser = users.find((user) => user.Id === Id && user.name === name)
 
     if (!duplicateUser) {
-        if(string.length === [5,20]){
+        if(string.length === [5,20]) {
             users.push({
                 Id: Id,
                 name: name,
@@ -18,7 +18,7 @@ const addUser = (Id, name, lastname, age, major) => {
             })
             saveUsers(users)
             console.log(chalk.green.inverse('New user added!'))
-        }else console.log(chalk.red.inverse('Name must be at least 5 to 20 characters!'))
+        } else console.log(chalk.red.inverse('Name must be at least 5 to 20 characters!'))
     }else {
         console.log(chalk.red.inverse('User already exists!'))
     }
