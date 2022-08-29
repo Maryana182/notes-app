@@ -1,10 +1,1 @@
-[{"Id":"MaryanaH","name":"Maryana","lastname":"Hassan","age":28,"major":"engineering"},
-{"Id":"JihadK","name":"Jihad","lastname":"Kahil","age":29,"major":"software engineering"},
-{"Id":"ImadK","name":"Imad","lastname":"Kahil","age":27,"major":"engineering"},
-{"Id":"MohamadA","name":"Mohamad","lastname":"Ahmad","age":29,"major":"accounting"},
-{"Id":"AA","name":"Ali","lastname":"Ahmad","age":23,"major":"accounting"},
-{"Id":"","name":"jihad123","lastname":"kahil","age":30,"major":"dev"},
-{"Id":"CK","email":"khdrnassar@gmail.com","name":"Khdr123","lastname":"Nassar","age":32,"major":"sales"},
-{"Id":"CK","email":"khdrn@gmail.com","name":"Khoder","lastname":"Nassar","age":32,"major":"sales"},
-{"Id":"KN","email":"khodrn@gmail.com","name":"Khdr123","lastname":"Nassar","age":32,"major":"sales"},
-{"Id":"","email":"jihadkahil.93@gmail.com","name":"jihadkahil","lastname":"kahil123","age":12,"major":"software enginner"}]
+[{"Id":"MaryanaH","name":"Maryana","lastname":"Hassan","age":28,"major":"engineering"},{"Id":"JihadK","name":"Jihad","lastname":"Kahil","age":29,"major":"software engineering"},{"Id":"ImadK","name":"Imad","lastname":"Kahil","age":27,"major":"engineering"},{"Id":"MohamadA","name":"Mohamad","lastname":"Ahmad","age":29,"major":"accounting"},{"Id":"AA","name":"Ali","lastname":"Ahmad","age":23,"major":"accounting"},{"Id":"","name":"jihad123","lastname":"kahil","age":30,"major":"dev"},{"Id":"CK","email":"khdrnassar@gmail.com","name":"Khdr123","lastname":"Nassar","age":32,"major":"sales"},{"Id":"CK","email":"khdrn@gmail.com","name":"Khoder","lastname":"Nassar","age":32,"major":"sales"},{"Id":"KN","email":"khodrn@gmail.com","name":"Khdr123","lastname":"Nassar","age":32,"major":"sales"},{"Id":"69527c71-6045-4e2a-9cc0-7db678e8552d","email":"jihadkahil.93@gmail.com","name":"jihadkahil","lastname":"kahil123","age":12,"major":"software enginner"}]
