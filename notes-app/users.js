@@ -17,7 +17,7 @@ const addUser = (Id, email, name, lastname, age, major) => {
                 major: major,
             })
 
-                if ((name.length >= 5 && name.length <= 20) && (lastname.length >= 5 && lainitstname.length <= 20)) {
+                if ((name.length >= 5 && name.length <= 20) && (lastname.length >= 5 && lastname.length <= 20)) {
                     console.log(crypto.randomUUID(users.Id))
                     saveUsers(users)
                     console.log(chalk.green.inverse('New user added!'))   
