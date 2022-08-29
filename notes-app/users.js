@@ -6,10 +6,11 @@ const crypto = require('crypto')
 const addUser = (Id, email, name, lastname, age, major) => {
     const users = loadUsers()
     const duplicateUser = users.find((user) => user.email === email)
+    
 
     if (!duplicateUser) {
             users.push({
-                Id: crypto.randomUUID(users.Id),
+                Id: crypto.randomUUID(new Date()),
                 email: email,
                 name: name,
                 lastname: lastname,
