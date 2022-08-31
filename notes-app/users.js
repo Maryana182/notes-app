@@ -7,7 +7,6 @@ const addUser = (Id, email, name, lastname, age, major) => {
     const users = loadUsers()
     const duplicateUser = users.find((user) => user.email === email)
     
-
     if (!duplicateUser) {
             users.push({
                 Id: crypto.randomUUID(new Date()),
@@ -18,8 +17,8 @@ const addUser = (Id, email, name, lastname, age, major) => {
                 major: major,
             })
 
-                if ((name.length >= 5 && name.length <= 20) && (lastname.length >= 5 && lastname.length <= 20)) {
-                    // console.log(crypto.randomUUID(users.Id))
+                if ((name.length >= 5 && name.length <= 20) && (lastname.length >= 5 && lastname.length <= 20)) 
+                {
                     saveUsers(users)
                     console.log(chalk.green.inverse('New user added!'))   
             }else{console.log(chalk.red.inverse('Name must be at least 5 to 20 characters!'))
