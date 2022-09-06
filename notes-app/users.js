@@ -1,7 +1,7 @@
 const fs = require('fs')
 const chalk = require('chalk')
 const { string } = require('yargs')
-const crypto = require('crypto')
+//const crypto = require('crypto')
 
 const addUser = (Id, email, name, lastname, age, major) => {
     const users = loadUsers()
@@ -9,7 +9,7 @@ const addUser = (Id, email, name, lastname, age, major) => {
     
     if (!duplicateUser) {
             users.push({
-                Id: crypto.randomUUID(new Date()),
+                Id: new Date(),
                 email: email,
                 name: name,
                 lastname: lastname,
@@ -18,7 +18,7 @@ const addUser = (Id, email, name, lastname, age, major) => {
             })
 
                 if ((name.length >= 5 && name.length <= 20) && (lastname.length >= 5 && lastname.length <= 20)) 
-                {
+                { 
                     saveUsers(users)
                     console.log(chalk.green.inverse('New user added!'))   
             }else{console.log(chalk.red.inverse('Name must be at least 5 to 20 characters!'))
